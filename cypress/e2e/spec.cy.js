@@ -10,4 +10,9 @@ describe("todo list", () => {
     cy.visit("https://todolist.james.am/#/");
     cy.get("footer").contains("Double-click to edit a toodo").should("be.visible");
   });
+
+  it("footer displays 'Double-click to edit a todo'", () => {
+    cy.visit("https://todolist.james.am/#/");
+    cy.get("footer").contains("Double-click to edit a todo").should("be.visible");
+  });
 });
