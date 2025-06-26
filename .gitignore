@@ -1,5 +1,3 @@
 node_modules
 cypress/screenshots/*
-!cypress/screenshots/.gitkeep
 cypress/reports/*
-!cypress/reports/.gitkeep
