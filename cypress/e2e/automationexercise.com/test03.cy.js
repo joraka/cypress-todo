@@ -23,7 +23,7 @@ describe('Test Case 3: Login User with incorrect email and password', () => {
 
     // 6. Enter incorrect email address and password
     cy.get('form[action="/login"] input[data-qa="login-email"]').should('be.visible').type(myData.email);
-    cy.get('form[action="/login"] input[data-qa="login-password"]').should('be.visible').type(myData.password);
+    cy.get('form[action="/login"] input[data-qa="login-password"]').should('be.visible').type(myData.password, { parseSpecialCharSequences: false });
 
     // 7. Click 'login' button
     cy.get('form[action="/login"] button[data-qa="login-button"]').contains('Login').should('be.visible').click();

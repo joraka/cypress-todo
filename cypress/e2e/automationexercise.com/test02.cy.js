@@ -42,7 +42,7 @@ describe('Test Case 2: Login User with correct email and password', () => {
       .check();
 
     //password
-    cy.get('form[action="/signup"] input[data-qa="password"]').should('be.visible').type(myData.password);
+    cy.get('form[action="/signup"] input[data-qa="password"]').should('be.visible').type(myData.password, { parseSpecialCharSequences: false });
 
     //date of birth
     cy.get('form[action="/signup"] select[data-qa="days"]')
@@ -132,7 +132,7 @@ describe('Test Case 2: Login User with correct email and password', () => {
 
     // 6. Enter correct email address and password
     cy.get('form[action="/login"] input[data-qa="login-email"]').should('be.visible').type(myData.email);
-    cy.get('form[action="/login"] input[data-qa="login-password"]').should('be.visible').type(myData.password);
+    cy.get('form[action="/login"] input[data-qa="login-password"]').should('be.visible').type(myData.password, { parseSpecialCharSequences: false });
 
     // 7. Click 'login' button
     cy.get('form[action="/login"] button[data-qa="login-button"]').contains('Login').should('be.visible').click();

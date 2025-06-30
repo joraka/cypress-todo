@@ -42,7 +42,7 @@ describe('Test Case 1: Register User', () => {
       .check();
 
     //password
-    cy.get('form[action="/signup"] input[data-qa="password"]').should('be.visible').type(myData.password);
+    cy.get('form[action="/signup"] input[data-qa="password"]').should('be.visible').type(myData.password, { parseSpecialCharSequences: false });
 
     //date of birth
     cy.get('form[action="/signup"] select[data-qa="days"]')
