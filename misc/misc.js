@@ -1,15 +1,27 @@
-function randomString() {
-  return Math.random()
-    .toString(36)
-    .replace(/[^a-z]+/g, '')
-    .substring(0, 10);
+function generateRandomString(length = 10) {
+  let result = '';
+  const chars = 'abcdefghijklmnopqrstuvwxyz';
+  for (let i = 0; i < length; i++) {
+    result += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return result;
 }
 
-function randomEmail(domain = 'example.com', prefix = 'user') {
-  return `${prefix}_${randomString() + randomString()}@${domain}`;
+function generatePassword(length = 16) {
+  const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+[]{}|;:,.<>?/~`';
+  let result = '';
+  for (let i = 0; i < length; i++) {
+    result += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return result;
+}
+
+function generateEmail(domain = 'example.com', prefix = 'user') {
+  return `${prefix}_${generateRandomString(15)}@${domain}`;
 }
 
 module.exports = {
-  randomEmail,
-  randomString,
+  generateEmail,
+  generateRandomString,
+  generatePassword,
 };

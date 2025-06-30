@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
-const { randomEmail } = require('../../../misc/misc');
+const { randomEmail, generateEmail, generatePassword } = require('../../../misc/misc');
 
-describe('Test Case 1: Register User', () => {
+describe('Test Case 2: Login User with correct email and password', () => {
   const myData = {
     name: 'Bob',
     email: generateEmail('marley.com', 'bob'),
@@ -19,7 +19,7 @@ describe('Test Case 1: Register User', () => {
     mobile_number: '+12124447282',
   };
 
-  it('Test Case 1: Should register user', () => {
+  it('Should register user', () => {
     // 1. Launch browser
     // 2. Navigate to url 'http://automationexercise.com'
     cy.visit('http://automationexercise.com/');
@@ -126,21 +126,9 @@ describe('Test Case 1: Register User', () => {
 
     // 15. Click 'Continue' button
     cy.get('#form a[data-qa="continue-button"]').contains('Continue').should('be.visible').click();
+  });
 
-    // 16. Verify that 'Logged in as username' is visible
-    cy.contains('#header .navbar-nav li', 'Logged in as').should('contain.text', myData.name).should('be.visible');
-
-    // 17. Click 'Delete Account' button
-    cy.contains('#header .navbar-nav li a[href="/delete_account"]', 'Delete Account').should('be.visible').click();
-
-    // 18. Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
-
-    cy.contains('#form h2[data-qa="account-deleted"]', 'Account Deleted!').should('be.visible');
-
-    cy.get('#form a[data-qa="continue-button"]').contains('Continue').should('be.visible').click();
-
-    // home page
-    cy.contains('h2', 'Category').should('be.visible');
-    cy.get('#header a[style="color: orange;"]').contains('Home').should('be.visible');
+  it('should login user with valid data', () => {
+    cy.visit('http://automationexercise.com/');
   });
 });
