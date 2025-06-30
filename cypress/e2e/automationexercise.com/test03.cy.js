@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-const { generateUserObj } = require('../../../misc/misc');
+const { generateUserObj } = require('./helpers/dataHelper');
 
 describe('Test Case 3: Login User with incorrect email and password', () => {
   const myData = generateUserObj();

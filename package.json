@@ -16,6 +16,7 @@
   "type": "commonjs",
   "devDependencies": {
     "cypress": "^14.5.0",
+    "cypress-real-events": "^1.14.0",
     "mochawesome": "^7.1.3"
   }
 }
