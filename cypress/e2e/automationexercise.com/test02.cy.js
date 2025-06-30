@@ -1,23 +1,9 @@
 /// <reference types="cypress" />
 
-const { randomEmail, generateEmail, generatePassword } = require('../../../misc/misc');
+const { generateUserObj } = require('../../../misc/misc');
 
 describe('Test Case 2: Login User with correct email and password', () => {
-  const myData = {
-    name: 'Bob',
-    email: generateEmail('marley.com', 'bob'),
-    password: generatePassword(15),
-    first_name: 'Bob',
-    last_name: 'Marley',
-    company: 'Bobina Marlina',
-    full_address: '420 5th Ave #304, New York, NY 10018, United States',
-    address: '420 5th Ave #304',
-    city: 'New York',
-    state: 'New York',
-    country: 'United States',
-    zipcode: '10018',
-    mobile_number: '+12124447282',
-  };
+  const myData = generateUserObj();
 
   it('Should register user', () => {
     // 1. Launch browser
