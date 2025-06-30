@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-const { randomEmail } = require('../../../misc/misc');
+const { generateEmail, generatePassword } = require('../../../misc/misc');
 
 describe('Test Case 1: Register User', () => {
   const myData = {
@@ -19,7 +19,7 @@ describe('Test Case 1: Register User', () => {
     mobile_number: '+12124447282',
   };
 
-  it('Test Case 1: Should register user', () => {
+  it('Should register user', () => {
     // 1. Launch browser
     // 2. Navigate to url 'http://automationexercise.com'
     cy.visit('http://automationexercise.com/');
