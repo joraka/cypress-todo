@@ -61,7 +61,7 @@ describe('Test Case 1: Register User', () => {
       .should('be.visible')
       .select(userObj.birth_date.year)
       .find('option:selected')
-      .should('have.text', userObj.birth_date.year);
+      .should('have.text', String(userObj.birth_date.year));
 
     // 10. Select checkbox 'Sign up for our newsletter!'
     cy.get('form[action="/signup"] input[type="checkbox"]#newsletter').should('be.visible').check();
