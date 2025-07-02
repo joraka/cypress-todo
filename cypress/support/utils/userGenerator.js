@@ -1,4 +1,4 @@
-const { generateEmail, generatePassword } = require('../../../support/utils/misc');
+const { generateEmail, generatePassword } = require("./misc");
 
 function generateUserObj() {
   return {

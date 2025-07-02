@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+require('@cypress/xpath')
 
 describe('Test Case 13: Verify Product quantity in Cart', () => {
   it('Should have correct amount in the cart', () => {
