@@ -24,4 +24,5 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-import './utils/registerUser';
+import './formCommands/registerUser';
+import './formCommands/loginUser';

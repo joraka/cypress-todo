@@ -12,7 +12,7 @@ describe('Test Case 2: Login User with correct email and password', () => {
 
     //register user
     cy.registerUser(userObj);
-  
+
     // 3. Verify that home page is visible successfully
     cy.contains('h2', 'Category').should('be.visible');
     cy.contains('h2', 'Features Items').should('be.visible');

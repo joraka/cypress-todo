@@ -1,19 +1,17 @@
 /// <reference types="cypress" />
 
-const { generateUserObj } = require('./helpers/dataHelper');
-const registerUserHelper = require('./helpers/registerUserHelper');
+const { generateUserObj } = require("../../support/utils/userGenerator");
 
 describe('Test Case 5: Register User with existing email', () => {
-  const myData = generateUserObj();
-
-  it('Should register valid user', () => {
-    registerUserHelper(myData);
-  });
+  const userObj = generateUserObj();
 
   it('Should fail to register user with same email', () => {
     // 1. Launch browser
     // 2. Navigate to url 'http://automationexercise.com'
     cy.visit('http://automationexercise.com/');
+
+    //register user
+    cy.registerUser(userObj);
 
     // 3. Verify that home page is visible successfully
     cy.contains('h2', 'Category').should('be.visible');
@@ -27,8 +25,8 @@ describe('Test Case 5: Register User with existing email', () => {
 
     // 6. Enter name and email address
 
-    cy.get('form[action="/signup"] input[data-qa="signup-name"]').should('be.visible').type(myData.name);
-    cy.get('form[action="/signup"] input[data-qa="signup-email"]').should('be.visible').type(myData.email);
+    cy.get('form[action="/signup"] input[data-qa="signup-name"]').should('be.visible').type(userObj.name);
+    cy.get('form[action="/signup"] input[data-qa="signup-email"]').should('be.visible').type(userObj.email);
 
     // 7. Click 'Signup' button
     cy.get('form[action="/signup"] button[data-qa="signup-button"]').should('be.visible').click();

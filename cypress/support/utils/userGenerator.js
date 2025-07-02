@@ -17,7 +17,8 @@ function generateUserObj() {
     mobile_number: '+12124447282',
     birth_date: {
       day: 1,
-      month: 3,
+      month: 2,
+      monthStr: 'February',
       year: 1980,
     },
   };

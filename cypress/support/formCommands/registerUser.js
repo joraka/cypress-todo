@@ -1,4 +1,4 @@
-Cypress.Commands.add('registerUser', (userObj) => {
+Cypress.Commands.add('registerUser', (userObj, doCleanup = true) => {
   cy.contains('#header a[href="/login"]', 'Signup / Login').click();
   cy.get('form[action="/signup"] input[data-qa="signup-name"]').type(userObj.name);
   cy.get('form[action="/signup"] input[data-qa="signup-email"]').type(userObj.email);
@@ -22,6 +22,8 @@ Cypress.Commands.add('registerUser', (userObj) => {
   cy.get('form[action="/signup"] button[data-qa="create-account"]').should('contain.text', 'Create Account').click();
 
   //cleanup
-  cy.clearCookies();
-  cy.visit('http://automationexercise.com/');
+  if (doCleanup) {
+    cy.clearCookies();
+    cy.visit('http://automationexercise.com/');
+  }
 });
