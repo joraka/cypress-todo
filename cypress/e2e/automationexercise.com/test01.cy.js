@@ -1,14 +1,9 @@
 /// <reference types="cypress" />
 
-const { generateUserObj } = require('./helpers/dataHelper');
-const registerUserHelper = require('./helpers/registerUserHelper');
+const { generateUserObj } = require('../../support/utils/userGenerator');
 
 describe('Test Case 1: Register User', () => {
   const myData = generateUserObj();
-
-  beforeEach(() => {
-    cy.visit('http://automationexercise.com/');
-  });
 
   it('Should register user', () => {
     // 1. Launch browser

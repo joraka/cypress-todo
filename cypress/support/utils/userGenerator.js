@@ -1,4 +1,4 @@
-const { generateEmail, generatePassword } = require("./misc");
+const { generateEmail, generatePassword } = require('./misc');
 
 function generateUserObj() {
   return {
@@ -15,6 +15,11 @@ function generateUserObj() {
     country: 'United States',
     zipcode: '10018',
     mobile_number: '+12124447282',
+    birth_date: {
+      day: 1,
+      month: 3,
+      year: 1980,
+    },
   };
 }
 
