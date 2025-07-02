@@ -6,12 +6,12 @@ describe('Test Case 4: Logout User', () => {
   const userObj = generateUserObj();
 
   it('Should login user with valid data and logs out', () => {
+    //register user
+    cy.registerUser(userObj);
+
     // 1. Launch browser
     // 2. Navigate to url 'http://automationexercise.com'
     cy.visit('http://automationexercise.com/');
-
-    //register user
-    cy.registerUser(userObj);
 
     // 3. Verify that home page is visible successfully
     cy.contains('h2', 'Category').should('be.visible');

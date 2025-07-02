@@ -34,11 +34,9 @@ describe('Test Case 12: Add Products in Cart', () => {
       });
 
     // 6. Click 'Continue Shopping' button
-
     cy.contains('#cartModal button', 'Continue Shopping').should('be.visible').click();
 
     // 7. Hover over second product and click 'Add to cart'
-
     cy.get('.features_items .single-products')
       .eq(1)
       .should('be.visible')
@@ -57,7 +55,6 @@ describe('Test Case 12: Add Products in Cart', () => {
 
     // 9. Verify both products are added to Cart
     // 10. Verify their prices, quantity and total price
-
     cy.get('#cart_items tbody tr')
       .then(($rows) => {
         expect($rows.length, 'expect items in table be the same size as added items').to.equal(
